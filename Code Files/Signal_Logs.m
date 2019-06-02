@@ -1,5 +1,5 @@
-%signal=[Signal_Log.time,Signal_Log.signals.values(:)];
-%csvwrite('Signal_Log.csv',signal);
+signal_short=[Signal_Log.time,Signal_Log.signals.values(:)];
+csvwrite('Signal_Log.csv',signal_short);
 shifted_signal=[Shifted_Signal_Log.time,Shifted_Signal_Log.signals.values(:)];
 csvwrite('Shifted_Signal_Log.csv',shifted_signal);
 
