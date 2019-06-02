@@ -1,0 +1,14 @@
+function convolution_output=pulseCompression(burst_signal,code_signal,gap_signal)
+%cseq=generateRandomCodedSequence(2400,6*10^-3,250);
+%gseq=generateRandomGapSequence(2400,6*10^-3,250);
+pro=[code_signal(:,1),code_signal(:,2).*gap_signal(:,2)];
+convolve=conv(burst_signal(:,2),pseq(:,2));
+conv_time=linspace(0,2*6*10^-3,length(pseq)+length(hann_pulse_simu)-1);
+convolution_output=[transpose(conv_time),convolve];
+subplot(2,2,1)
+plot(hann_pulse_simu(:,1),hann_pulse_simu(:,2));
+subplot(2,2,2)
+plot(pseq(:,1),pseq(:,2));
+subplot(2,2,3)
+%plot(convolution_output(:,1),convolution_output(:,2));
+end

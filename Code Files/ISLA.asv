@@ -1,0 +1,11 @@
+wave=generateHann(5,2*10^6,6*10^-3,251);
+unit_m=zeros(length(wave),1);
+unit_n=zeros(length(wave),1);
+unit_m(wave(:,1)>=0)=1;
+unit_n(wave(:,1)>=2.5*10^-6)=1;
+pulse=unit_m-unit_n;
+burst=wave.*pulse;
+gap=generateRandomGapSequence(2400,6*10^-3,250);
+code=generateRandomCodedSequence(2400,6*10^-3,250);
+output=pulseCompression(burst,code,gap);
+csv

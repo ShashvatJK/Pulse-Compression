@@ -1,0 +1,16 @@
+x = linspace(0,2.5*10^-6,10000);
+y = -cos(2*pi*(2*10^6)*x);
+p = x/(2.5*10^-6);
+z1 =(0.5- 0.5*cos(2*pi*p));
+z2= -0.5+0.5*cos(2*pi*p);
+w=z1.*y;
+%plot(w,x);
+hold on
+%plot(x,y);
+hold on
+%plot(x,z1);
+hold on
+%plot(x,z2);
+hold on
+plot(x,w);
+hanning

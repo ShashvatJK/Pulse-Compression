@@ -1,0 +1,13 @@
+%function convolution_output=getConvolution(signal_1,signal_2)
+x=10001;
+d=[b(:,1),b(:,2).*c(:,2)];
+convolve=conv(hann_pulse_simu(:,2),d(:,2));
+conv_time=linspace(0,2*9*10^-5,length(d)+lenght-1);
+convolution_output=[transpose(conv_time),convolve];
+subplot(2,2,1)
+plot(hann_pulse_simu(:,1),hann_pulse_simu(:,2));
+subplot(2,2,2)
+plot(d(:,1),d(:,2));
+subplot(2,2,3)
+plot(convolution_output(:,1),convolution_output(:,2));
+%end
