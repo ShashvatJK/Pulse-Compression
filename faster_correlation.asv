@@ -1,0 +1,10 @@
+
+x=signal(:,2);
+y=new_reception_2mm(:,2);
+signal_size = length(x); %if two signal sizes are unequal input size of shorter signal
+max_delay=signal_size;
+slant_ascan_2mm = zeros(max_delay, 1);
+
+[r,lags]=xcorr(x,y,signal_size);
+lags=lags';
+r=flipud(r);
