@@ -11,7 +11,7 @@ function ascan= ascanGenerator(transmission_signal_file_name, inverse_gap_file_n
     reception=picoProcessing(output_signal_from_pico,required_sampling_frequency,required_time_length,inv_gap);
 
     %correlation
-    ascan = fasterCorrelation(signal,reception);
+    ascan = fastCorrelation(signal,reception);
     dlmwrite(ascan_file_name, ascan, 'delimiter', ',', 'precision', 10);
     plot(ascan(:,1),ascan(:,2));
     xlim([0 400]);
@@ -32,7 +32,7 @@ function reception = picoProcessing(output_signal_from_pico,required_sampling_fr
     reception=[time_resample(1:required_time_length*required_sampling_frequency+1,1),signal_resample(1:required_time_length*required_sampling_frequency+1,1).*inverse_gap_sequence(:,2)];
 end
 
-function ascan = fasterCorrelation(transmission_signal,reception_signal)
+function ascan = fastCorrelation(transmission_signal,reception_signal)
     %file name with extension
     %time in seconds 
     x=transmission_signal(:,2);
